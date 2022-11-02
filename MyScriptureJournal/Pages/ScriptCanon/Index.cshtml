@@ -1,0 +1,36 @@
+@page
+@model MyScriptureJournal.Pages_ScriptCanon.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Canon[0].CanonName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Canon) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CanonName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CanonID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CanonID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CanonID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

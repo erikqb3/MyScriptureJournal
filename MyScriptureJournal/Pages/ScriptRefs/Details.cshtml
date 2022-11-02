@@ -1,0 +1,55 @@
+@page
+@model MyScriptureJournal.Pages_ScriptRefs.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ScriptRef</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptRef.Canon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptRef.Canon)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptRef.Book)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptRef.Book)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptRef.Chapters)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptRef.Chapters)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptRef.Verses)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptRef.Verses)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptRef.Notes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptRef.Notes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ScriptRef.CreateDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ScriptRef.CreateDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ScriptRef?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

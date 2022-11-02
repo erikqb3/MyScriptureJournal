@@ -1,0 +1,59 @@
+@page "{id:int?}"
+@model MyScriptureJournal.Pages_ScriptRefs.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ScriptRef</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ScriptRef.Canon" class="control-label"></label>
+                <input asp-for="ScriptRef.Canon" class="form-control" />
+                <span asp-validation-for="ScriptRef.Canon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScriptRef.Book" class="control-label"></label>
+                <input asp-for="ScriptRef.Book" class="form-control" />
+                <span asp-validation-for="ScriptRef.Book" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScriptRef.Chapters" class="control-label"></label>
+                <input asp-for="ScriptRef.Chapters" class="form-control" />
+                <span asp-validation-for="ScriptRef.Chapters" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScriptRef.Verses" class="control-label"></label>
+                <input asp-for="ScriptRef.Verses" class="form-control" />
+                <span asp-validation-for="ScriptRef.Verses" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScriptRef.Notes" class="control-label"></label>
+                <input asp-for="ScriptRef.Notes" class="form-control" />
+                <span asp-validation-for="ScriptRef.Notes" class="text-danger"></span>
+            </div>
+            <div hidden class="form-group">
+                <label asp-for="ScriptRef.CreateDate" class="control-label"></label>
+                <input asp-for="ScriptRef.CreateDate" class="form-control" value=/>
+                <span asp-validation-for="ScriptRef.CreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
