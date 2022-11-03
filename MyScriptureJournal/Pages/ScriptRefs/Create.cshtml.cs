@@ -32,6 +32,9 @@ namespace MyScriptureJournal.Pages_ScriptRefs
         {
           if (!ModelState.IsValid)
             {
+                // Console.WriteLine(ModelState);
+               var modalErrors = string.Join(",", ModelState.Values.Where(E => E.Errors.Count > 0).SelectMany(E => E.Errors).Select(E => E.ErrorMessage).ToArray());
+               Console.WriteLine(modalErrors);
                 return Page();
             }
 
