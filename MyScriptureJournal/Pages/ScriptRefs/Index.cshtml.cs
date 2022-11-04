@@ -24,7 +24,7 @@ namespace MyScriptureJournal.Pages_ScriptRefs
         public string ? SearchString { get; set; }
         public SelectList ? Canon { get; set; }
         [BindProperty(SupportsGet = true)]
-        public string ? Book { get; set;}
+        public string ? StandardWorks { get; set;}
 
 
         // public async Task OnGetAsync()
@@ -37,13 +37,23 @@ namespace MyScriptureJournal.Pages_ScriptRefs
 
         public async Task OnGetAsync()
         {
+            IQueryable<string>canonQuery = from r in _context.ScriptRef
+                                            orderby r.Canon
+                                            select r.Canon;
+
+
             var refs = from r in _context.ScriptRef
                         select r;
             if (!string.IsNullOrEmpty(SearchString))
             {
                 refs = refs.Where(s => s.Canon.Contains(SearchString));
             }
+            if (!string.IsNullOrEmpty(StandardWorks))
+            {
+                refs= refs.Where(s => s.Canon == StandardWorks);
+            }
 
+            Canon = new SelectList(await canonQuery.Distinct().ToListAsync());
             ScriptRef = await refs.ToListAsync();
         }
     }

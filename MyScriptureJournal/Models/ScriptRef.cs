@@ -12,6 +12,7 @@ namespace MyScriptureJournal.Models
         public string Chapters { get; set; } = string.Empty;
         public string Verses { get; set; } = string.Empty;
         public string Notes { get; set; } = string.Empty;
+        public string lessNotes { get; set; } = string.Empty;
 
         [Display(Name = "Create Date")]
         [DataType(DataType.Date)]

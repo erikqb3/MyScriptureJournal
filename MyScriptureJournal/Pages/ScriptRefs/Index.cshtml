@@ -12,6 +12,15 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form>
+    <p>
+        <select asp-for="StandardWorks" asp-items="Model.Canon">
+            <option value="">All</option>
+        </select>
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter"/>
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -29,6 +38,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ScriptRef[0].Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScriptRef[0].lessNotes)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ScriptRef[0].CreateDate)
@@ -53,6 +65,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lessNotes)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreateDate)
