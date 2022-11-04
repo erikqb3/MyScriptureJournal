@@ -25,6 +25,7 @@ namespace MyScriptureJournal.Models
                 context.ScriptRef.AddRange(
                     new ScriptRef
                     {
+                        Canon = "Book of Mormon",
                         Book = "1 Nephi",
                         Chapters = "3",
                         Verses = "7",
@@ -35,6 +36,7 @@ namespace MyScriptureJournal.Models
 
                     new ScriptRef
                     {
+                        Canon = "Book of Mormon",
                         Book = "Ether",
                         Chapters = "12",
                         Verses = "6",
@@ -45,6 +47,7 @@ namespace MyScriptureJournal.Models
 
                     new ScriptRef
                     {
+                        Canon = "Book of Mormon",
                         Book = "3 Nephi",
                         Chapters = "27",
                         Verses = "27",
@@ -55,6 +58,7 @@ namespace MyScriptureJournal.Models
 
                     new ScriptRef
                     {
+                        Canon = "Book of Mormon",
                         Book = "Moroni",
                         Chapters = "10",
                         Verses = "3-5",

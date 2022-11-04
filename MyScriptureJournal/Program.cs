@@ -18,6 +18,7 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
 
     SeedData.Initialize(services);
+    CanonSeed.Initialize(services);
 }
 
 

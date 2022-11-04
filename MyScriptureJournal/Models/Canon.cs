@@ -5,6 +5,8 @@ namespace MyScriptureJournal.Models
     public class Canon
     {
         public int CanonID { get; set; }
-        public string CanonName { get; set; } = string.Empty;
+        public string canonName { get; set; } = string.Empty;
+
+        public int bookCount { get; set; }
     }
 }

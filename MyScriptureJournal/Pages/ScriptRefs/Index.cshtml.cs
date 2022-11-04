@@ -19,6 +19,8 @@ namespace MyScriptureJournal.Pages_ScriptRefs
             _context = context;
         }
 
+        // public IList<CanonSeed> canonSeeds{ get;set; } = default!;
+
         public IList<ScriptRef> ScriptRef { get;set; } = default!;
         [BindProperty(SupportsGet = true)]
         public string ? SearchString { get; set; }
@@ -37,9 +39,9 @@ namespace MyScriptureJournal.Pages_ScriptRefs
 
         public async Task OnGetAsync()
         {
-            IQueryable<string>canonQuery = from r in _context.ScriptRef
-                                            orderby r.Canon
-                                            select r.Canon;
+            IQueryable<string>canonQuery = from r in _context.Canon
+                                            orderby r.canonName
+                                            select r.canonName;
 
 
             var refs = from r in _context.ScriptRef

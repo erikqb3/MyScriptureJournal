@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Canon[0].CanonName)
+                @Html.DisplayNameFor(model => model.Canon[0].canonName)
             </th>
             <th></th>
         </tr>
@@ -23,7 +23,7 @@
 @foreach (var item in Model.Canon) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CanonName)
+                @Html.DisplayFor(modelItem => item.canonName)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.CanonID">Edit</a> |
