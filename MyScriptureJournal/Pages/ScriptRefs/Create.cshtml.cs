@@ -26,14 +26,25 @@ namespace MyScriptureJournal.Pages_ScriptRefs
         [BindProperty]
         public ScriptRef ScriptRef { get; set; } = default!;
         
+        
+        
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+            var newLength = 255;
+            if (ScriptRef.Notes.Length < newLength) {
+                newLength = ScriptRef.Notes.Length;
+            }
+            ScriptRef.lessNotes = ScriptRef.Notes.Substring(0,newLength);
+            ScriptRef.CreateDate = DateTime.Now;
+            Console.WriteLine(ScriptRef.CreateDate);
+            Console.WriteLine(ScriptRef.lessNotes);
+
           if (!ModelState.IsValid)
             {
                 // Console.WriteLine(ModelState);
-               var modalErrors = string.Join(",", ModelState.Values.Where(E => E.Errors.Count > 0).SelectMany(E => E.Errors).Select(E => E.ErrorMessage).ToArray());
+               var modalErrors = string.Join(" + ", ModelState.Values.Where(E => E.Errors.Count > 0).SelectMany(E => E.Errors).Select(E => E.ErrorMessage).ToArray());
                Console.WriteLine(modalErrors);
                 return Page();
             }
@@ -43,5 +54,7 @@ namespace MyScriptureJournal.Pages_ScriptRefs
 
             return RedirectToPage("./Index");
         }
+
+        
     }
 }

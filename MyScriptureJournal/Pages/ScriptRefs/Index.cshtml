@@ -10,23 +10,30 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="btn btn-primary" asp-page="Create">Create New</a>
 </p>
+
+@* <div class="form-group">
+    <input asp-page="Create" type="submit" value="Create" class="btn btn-primary" />
+</div> *@
+
 <form>
     <p>
-        <select asp-for="StandardWorks" asp-items="Model.Canon">
+        <select asp-for="SearchBooks" asp-items="Model.Books">
             <option value="">All</option>
         </select>
-        Title: <input type="text" asp-for="SearchString" />
+        <label for="text">Search in Notes: </label>
+        <input id="text" type="text" asp-for="SearchString" />
         <input type="submit" value="Filter"/>
     </p>
 </form>
+<div class="tableHolder">
 <table class="table">
     <thead>
         <tr>
-            <th>
+            @* <th>
                 @Html.DisplayNameFor(model => model.ScriptRef[0].Canon)
-            </th>
+            </th> *@
             <th>
                 @Html.DisplayNameFor(model => model.ScriptRef[0].Book)
             </th>
@@ -45,15 +52,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.ScriptRef[0].CreateDate)
             </th>
-            <th></th>
+            <th>Options</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.ScriptRef) {
         <tr>
-            <td>
+            @* <td>
                 @Html.DisplayFor(modelItem => item.Canon)
-            </td>
+            </td> *@
             <td>
                 @Html.DisplayFor(modelItem => item.Book)
             </td>
@@ -79,5 +86,6 @@
             </td>
         </tr>
 }
+</div>
     </tbody>
 </table>

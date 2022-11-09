@@ -8,8 +8,8 @@ namespace MyScriptureJournal.Models
     {
         public int ID { get; set; }
 
-        [Required]
-        public string Canon { get; set; } = string.Empty;
+        // [Required]
+        // public string Canon { get; set; } = string.Empty;
 
         [Required]
         public string Book { get; set; } = string.Empty;
@@ -25,13 +25,13 @@ namespace MyScriptureJournal.Models
         [StringLength(1000, MinimumLength = 1)]
         public string Notes { get; set; } = string.Empty;
 
-        [StringLength(255)]
-        [Display(Name = "Notes")]
+        [StringLength(255, MinimumLength = 1)]
+        [Display(Name = "Small Notes")]
         public string lessNotes { get; set; } = string.Empty;
 
 
-        [Display(Name = "Create Date")]
+        [Display(Name = "Last Edited")]
         [DataType(DataType.Date)]
-        public DateTime CreateDate { get; set; }
+        public DateTime CreateDate { get; set; } = DateTime.Now;
     }
 }

@@ -1,18 +1,68 @@
-html {
-  font-size: 14px;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@media only screen and (min-width: 0){
+    html > body {
+      background-color: cyan;
+      /* height:90vh */
+    }
+    html > body > div.container {
+      height: 100%;
+      width:100%;
+    }
+    nav.navbar {
+      background-color: navy;
+    }
+
+    .whiteText{
+      color:white;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+    }
+    .row{
+      background-color: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow:  0px 0px 10px 10px white;
+    }
+    label {
+      font-weight: bold;
+    }
+    [type="submit"] {
+      margin-top: 1rem;
+    }
+
+    .tableHolder {
+      width: 100%;
+      overflow-x:scroll;
+      background-color: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow:  0px 0px 10px 10px white;
+    }
+    
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
+@media only screen and (min-width: 768px) {
+  html > body {
   }
-}
+  html > body > div.container {
+  }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
 
-body {
-  margin-bottom: 60px;
+  h1 {
+
+  }
+  .row{
+  }
+  label {
+
+  }
+  [type="submit"] {
+  }
+
+  .tableHolder {
+    overflow-x:initial;
+  }
+  
 }

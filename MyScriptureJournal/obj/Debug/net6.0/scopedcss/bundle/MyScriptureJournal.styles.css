@@ -2,6 +2,13 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap'); */
+
+html[b-ee3u8oh0qg]{
+  /* font-family: 'Dancing Script', cursive; */
+}
+
+
 a.navbar-brand[b-ee3u8oh0qg] {
   white-space: normal;
   text-align: center;
@@ -10,6 +17,7 @@ a.navbar-brand[b-ee3u8oh0qg] {
 
 a[b-ee3u8oh0qg] {
   color: #0077cc;
+  /* font-family: 'Dancing Script', cursive; */
 }
 
 .btn-primary[b-ee3u8oh0qg] {
@@ -40,10 +48,18 @@ button.accept-policy[b-ee3u8oh0qg] {
   line-height: inherit;
 }
 
+
+
+
 .footer[b-ee3u8oh0qg] {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+
+@media only screen and (min-width: 786px){
+  .footer[b-ee3u8oh0qg] {
+    position: absolute;
+    bottom: 0;
+  }
 }

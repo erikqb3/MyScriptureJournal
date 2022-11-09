@@ -42,6 +42,15 @@ namespace MyScriptureJournal.Pages_ScriptRefs
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            var newLength = 255;
+            if (ScriptRef.Notes.Length < newLength) {
+                newLength = ScriptRef.Notes.Length;
+            }
+            ScriptRef.lessNotes = ScriptRef.Notes.Substring(0,newLength);
+            ScriptRef.CreateDate = DateTime.Now;
+            Console.WriteLine(ScriptRef.CreateDate);
+            Console.WriteLine(ScriptRef.lessNotes);
+
             if (!ModelState.IsValid)
             {
                 return Page();
